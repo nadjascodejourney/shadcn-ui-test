@@ -4,6 +4,8 @@ import "./App.css";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 
+import Dashboard from "./components/Dashboard.jsx";
+
 function App() {
   const [count, setCount] = useState(0);
   const [date, setDate] = useState(new Date());
@@ -34,6 +36,8 @@ function App() {
           onSelect={setDate}
           className="rounded-md border border-orange-800 inline-block"
         />
+
+        <Dashboard />
       </div>
     </>
   );
