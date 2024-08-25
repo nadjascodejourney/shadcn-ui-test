@@ -37,6 +37,10 @@ function App() {
           className="rounded-md border border-orange-800 inline-block"
         />
 
+        <h2 className="mt-10  pb-2 text-3xl font-semibold">
+          Customizable Compontents to build a Dashboard:
+        </h2>
+
         <Dashboard />
       </div>
     </>

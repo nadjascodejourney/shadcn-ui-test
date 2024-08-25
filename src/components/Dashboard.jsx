@@ -164,6 +164,8 @@ export function Dashboard() {
             </CardDescription>
           </CardFooter>
         </Card>
+
+        {/* RESTING HR CHART */}
         <Card className="flex flex-col lg:max-w-md" x-chunk="charts-01-chunk-1">
           <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2 [&>div]:flex-1">
             <div>
@@ -190,7 +192,8 @@ export function Dashboard() {
               config={{
                 resting: {
                   label: "Resting",
-                  color: "hsl(var(--chart-1))",
+                  /* magenta color  */
+                  color: "hsl(300, 100%, 50%)", // this is the color of the line in the chart
                 },
               }}
               className="w-full"
@@ -236,7 +239,7 @@ export function Dashboard() {
                 <CartesianGrid
                   strokeDasharray="4 4"
                   vertical={false}
-                  stroke="hsl(var(--muted-foreground))"
+                  stroke="hsl(200, 100%, 50%)"
                   strokeOpacity={0.5}
                 />
                 <YAxis hide domain={["dataMin - 10", "dataMax + 10"]} />
@@ -254,14 +257,14 @@ export function Dashboard() {
                 <Line
                   dataKey="resting"
                   type="natural"
-                  fill="var(--color-resting)"
-                  stroke="var(--color-resting)"
+                  fill="hsl(300, 100%, 50%)"
+                  stroke="hsl(300, 100%, 50%)"
                   strokeWidth={2}
                   dot={false}
                   activeDot={{
-                    fill: "var(--color-resting)",
-                    stroke: "var(--color-resting)",
-                    r: 4,
+                    fill: "hsl(300, 100%, 50%)",
+                    stroke: "hsl(300, 100%, 50%)",
+                    r: 6,
                   }}
                 />
                 <ChartTooltip
@@ -284,6 +287,8 @@ export function Dashboard() {
           </CardContent>
         </Card>
       </div>
+
+      {/* PROGRESS CHART */}
       <div className="grid w-full flex-1 gap-6 lg:max-w-[20rem]">
         <Card className="max-w-xs" x-chunk="charts-01-chunk-2">
           <CardHeader>
@@ -304,7 +309,7 @@ export function Dashboard() {
                 config={{
                   steps: {
                     label: "Steps",
-                    color: "hsl(var(--chart-1))",
+                    color: "hsl(300, 100%, 50%)",
                   },
                 }}
                 className="aspect-auto h-[32px] w-full"
@@ -327,7 +332,7 @@ export function Dashboard() {
                 >
                   <Bar
                     dataKey="steps"
-                    fill="var(--color-steps)"
+                    fill="hsl(200, 100%, 50%)"
                     radius={4}
                     barSize={32}
                   >
@@ -336,7 +341,7 @@ export function Dashboard() {
                       dataKey="date"
                       offset={8}
                       fontSize={12}
-                      fill="white"
+                      fill="black"
                     />
                   </Bar>
                   <YAxis dataKey="date" type="category" tickCount={1} hide />
@@ -355,7 +360,7 @@ export function Dashboard() {
                 config={{
                   steps: {
                     label: "Steps",
-                    color: "hsl(var(--muted))",
+                    color: "hsl(200, 100%, 50%)",
                   },
                 }}
                 className="aspect-auto h-[32px] w-full"
@@ -378,7 +383,7 @@ export function Dashboard() {
                 >
                   <Bar
                     dataKey="steps"
-                    fill="var(--color-steps)"
+                    fill="hsl(200, 100%, 50%)"
                     radius={4}
                     barSize={32}
                   >
@@ -387,7 +392,7 @@ export function Dashboard() {
                       dataKey="date"
                       offset={8}
                       fontSize={12}
-                      fill="hsl(var(--muted-foreground))"
+                      fill="black"
                     />
                   </Bar>
                   <YAxis dataKey="date" type="category" tickCount={1} hide />
@@ -397,6 +402,8 @@ export function Dashboard() {
             </div>
           </CardContent>
         </Card>
+
+        {/* WALKING DISTANCE CHART */}
         <Card className="max-w-xs" x-chunk="charts-01-chunk-3">
           <CardHeader className="p-4 pb-0">
             <CardTitle>Walking Distance</CardTitle>
@@ -416,7 +423,7 @@ export function Dashboard() {
               config={{
                 steps: {
                   label: "Steps",
-                  color: "hsl(var(--chart-1))",
+                  color: "hsl(300, 100%, 50%)",
                 },
               }}
               className="ml-auto w-[72px]"
@@ -462,7 +469,7 @@ export function Dashboard() {
               >
                 <Bar
                   dataKey="steps"
-                  fill="var(--color-steps)"
+                  fill="hsl(300, 100%, 50%)"
                   radius={2}
                   fillOpacity={0.2}
                   activeIndex={6}
@@ -479,21 +486,23 @@ export function Dashboard() {
             </ChartContainer>
           </CardContent>
         </Card>
+
+        {/* MOVE, EXERCISE, STAND CHART */}
         <Card className="max-w-xs" x-chunk="charts-01-chunk-4">
           <CardContent className="flex gap-4 p-4 pb-2">
             <ChartContainer
               config={{
                 move: {
                   label: "Move",
-                  color: "hsl(var(--chart-1))",
+                  color: "hsl(400, 100%, 50%)",
                 },
                 stand: {
                   label: "Stand",
-                  color: "hsl(var(--chart-2))",
+                  color: "hsl(100, 100%, 50%)",
                 },
                 exercise: {
                   label: "Exercise",
-                  color: "hsl(var(--chart-3))",
+                  color: "hsl(300, 100%, 50%)",
                 },
               }}
               className="h-[140px] w-full"
@@ -510,19 +519,19 @@ export function Dashboard() {
                     activity: "stand",
                     value: (8 / 12) * 100,
                     label: "8/12 hr",
-                    fill: "var(--color-stand)",
+                    fill: "hsl(100, 100%, 50%)",
                   },
                   {
                     activity: "exercise",
                     value: (46 / 60) * 100,
                     label: "46/60 min",
-                    fill: "var(--color-exercise)",
+                    fill: "hsl(300, 100%, 50%)",
                   },
                   {
                     activity: "move",
                     value: (245 / 360) * 100,
                     label: "245/360 kcal",
-                    fill: "var(--color-move)",
+                    fill: "hsl(400, 100%, 50%)",
                   },
                 ]}
                 layout="vertical"
@@ -585,6 +594,7 @@ export function Dashboard() {
           </CardFooter>
         </Card>
       </div>
+
       <div className="grid w-full flex-1 gap-6">
         <Card className="max-w-xs" x-chunk="charts-01-chunk-5">
           <CardContent className="flex gap-4 p-4">
