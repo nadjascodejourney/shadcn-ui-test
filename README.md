@@ -1,8 +1,16 @@
-# React + Vite
+# shadcn/ui & React Testing Ground
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository serves as a test environment to experiment with.
+Its purpose is to explore different configurations and customizations of [shadcn/ui](https://ui.shadcn.com/).
 
-Currently, two official plugins are available:
+This project is also written with:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Vite
+- React
+- Tailwind CSS
+
+If you want to try it out yourself:
+
+1. Clone the repository: git clone https://github.com/yourusername/shadcn-ui-test.git
+2. Install dependencies: npm install
+3. Start the development server: npm run dev
